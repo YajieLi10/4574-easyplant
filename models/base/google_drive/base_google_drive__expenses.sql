@@ -7,6 +7,6 @@ SELECT DATE,
     _FILE,
     _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS,
     _LINE,
-    _MODIFIED AS MODIFIED_TS
+    _MODIFIED AS _MODIFIED_TS
 FROM {{source("google_drive", "expenses")}}
 ORDER BY DATE
