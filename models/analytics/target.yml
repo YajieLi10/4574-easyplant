@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: daily_finances
+    description: The daily finances table. This includes all cost and revenues in each day.
+    columns:
+      - name: cost_date
+        description: Date on which the costs or revenues arose
+        tests:
+          - unique
+          - not_null
+      - name: hr_cost
+        description: Company expenses on hr
+      - name: other_cost
+        description: Company expenses in other areas
+      - name: refund_cost
+        description: Amounts refunded by the company
+      - name: shipping_cost
+        description: Company expenses on shipping
+      - name: tech_tool_cost
+        description: Company expenses on tech tool
+      - name: warehouse_cost
+        description: Company expenses on warehouse
+      - name: total_cost
+        description: Sum of all the cost
+      - name: revenue
+        description: Revenues from orders
+      - name: profit
+        description: The difference between revenue and cost
+            
