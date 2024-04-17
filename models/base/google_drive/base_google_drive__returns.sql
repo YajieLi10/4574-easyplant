@@ -1,3 +1,9 @@
+WITH RANKING AS (
+    SELECT *,
+           ROW_NUMBER() OVER(PARTITION BY ORDER_ID ORDER BY RETURNED_AT ASC) AS ROW_N
+    FROM {{ source('google_drive', 'returns') }}
+)
+
 SELECT _FILE,
        _LINE,
        _MODIFIED AS _MODIFIED_TS,
@@ -5,4 +11,6 @@ SELECT _FILE,
        RETURNED_AT AS RETURNED_DATE,
        ORDER_ID,
        IS_REFUNDED     
-FROM {{ source('google_drive', 'returns') }}
+FROM RANKING
+WHERE 1=1
+AND ROW_N = 1
