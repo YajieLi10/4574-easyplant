@@ -1,3 +1,9 @@
+WITH RANKING_SESSION AS (
+    SELECT *,
+           ROW_NUMBER() OVER(PARTITION BY SESSION_ID ORDER BY SESSION_AT ASC) AS ROW_N
+    FROM {{ source('snowflake_web', 'sessions') }}
+)
+
 SELECT _FIVETRAN_ID,
        SESSION_ID,
        CAST(CLIENT_ID AS STRING) AS CLIENT_ID,
@@ -6,4 +12,6 @@ SELECT _FIVETRAN_ID,
        OS,
        _FIVETRAN_DELETED,
        _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS
-FROM {{ source('snowflake_web', 'sessions') }}
+FROM RANKING_SESSION
+WHERE 1=1
+AND ROW_N = 1
