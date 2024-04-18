@@ -156,8 +156,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: price_per_unit
-        description: The price per unit of the item
       - name: time_of_item_view
         description: The total times that an item was viewed
       - name: time_of_cart_add
