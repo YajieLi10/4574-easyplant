@@ -1,4 +1,4 @@
-select item_name, price_per_unit, time_of_item_view, time_of_cart_add
+select distinct item_name, price_per_unit, time_of_item_view, time_of_cart_add
 from(
     select 
         item_name,
