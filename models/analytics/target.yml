@@ -79,8 +79,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: order_id
-        description: The unique identifier of client's order
       - name: payment_method
         description: Client's way of payment
       - name: client_name

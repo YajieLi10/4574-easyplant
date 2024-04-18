@@ -18,7 +18,6 @@ WITH ClientSessions AS (
 )
 SELECT 
     CLIENT_ID,
-    ORDER_ID,
     PAYMENT_METHOD,
     CLIENT_NAME,
     STATE,
