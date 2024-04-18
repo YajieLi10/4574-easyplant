@@ -125,6 +125,51 @@ models:
       - name: refund_request
         description: Whether a refund is requested
 
+  - name: dim_employee
+    description: The employee table. This includes all information we have about the employees
+    columns:
+      - name: employee_id
+        description: The unique identifier of an employee
+        tests:
+          - unique
+          - not_null
+      - name: address
+        description: The address of the employee
+      - name: annual salary
+        description: The annual salary of the employee
+      - name: city
+        description: The city of the employee
+      - name: hire_date
+        description: The hire date of the employee
+      - name: name
+        description: The name of the employee
+      - name: quit_date
+        description: The quit date of the employee
+      - name: title
+        description: The title of the employee
+
+  - name: dim_item 
+    description: The item table. This includes all information we have about the items
+    columns:
+      - name: item_name
+        description: The unique identifier of an item
+        tests:
+          - unique
+          - not_null
+      - name: add_to_cart_quantity
+        description: The total number of items added to the cart
+      - name: item_view_ts
+        description: The time the item was viewed
+      - name: price_per_unit
+        description: The price per unit of the item
+      - name: remove_from_cart_quantity
+        description: The total number of items removed from the cart
+      - name: session_id
+        description: The unique identifier of a session
+      - name: stay_in_cart_quantity
+        description: The total number of items stayed in the cart
+
+        
 
 
   
