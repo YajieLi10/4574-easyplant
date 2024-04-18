@@ -156,18 +156,13 @@ models:
         tests:
           - unique
           - not_null
-      - name: add_to_cart_quantity
-        description: The total number of items added to the cart
-      - name: item_view_ts
-        description: The time the item was viewed
       - name: price_per_unit
         description: The price per unit of the item
-      - name: remove_from_cart_quantity
-        description: The total number of items removed from the cart
-      - name: session_id
-        description: The unique identifier of a session
-      - name: stay_in_cart_quantity
-        description: The total number of items stayed in the cart
+      - name: time_of_item_view
+        description: The total times that an item was viewed
+      - name: time_of_cart_add
+        description: The total times that an item was added into the cart
+
 
         
 
