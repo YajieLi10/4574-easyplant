@@ -71,4 +71,61 @@ models:
       - name: converted_to_order
         description: whether this session is converted to an order
 
+  - name: dim_client
+    description: The client table. This includes all information we have about our clients
+    columns:
+      - name: client_id
+        description: The unique identifier of a client
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: The unique identifier of client's order
+      - name: payment_method
+        description: Client's way of payment
+      - name: client_name
+        description: Name of the client
+      - name: state
+        description: Location info of the client
+      - name: payment_info
+        description: Pyment info of the client
+      - name: shipping_address
+        description: The shipping address of the client
+      - name: phone
+        description: Phone number of the client
+      - name: session_num
+        description: The number of sessions the client have
+      - name: is_ordered
+        description: Whether the client place an order
+
+  - name: fact_orders
+    description: The order table. This includes all information we have about the orders
+    columns:
+      - name: order_id
+        description: The unique identifier of an order
+        tests:
+          - unique
+          - not_null
+      - name: quantity_total
+        description: The total number of items in the order
+      - name: tax_rate
+        description: Tax percentage of the order
+      - name: shipping_cost
+        description: The cost of shipping of the order
+      - name: sum_item_totals
+        description: Cost exclude tax or shipping fee of the order
+      - name: tax_total
+        description: Total tax of the order
+      - name: price_total
+        description: The total price of the order
+      - name: returned_date
+        description: The returned date of the order
+      - name: is_refunded
+        description: Whether a refund is approved for the return
+      - name: refund_request
+        description: Whether a refund is requested
+
+
+
+  
         
