@@ -1,6 +1,13 @@
-WITH ranking AS(
+WITH ranking AS (
     SELECT *,
-           ROW_NUMBER() OVER(PARTITION BY ORDER_ID ORDER BY ORDER_AT) as row_n
+           ROW_NUMBER() OVER (
+               PARTITION BY ORDER_ID
+               ORDER BY ORDER_AT DESC
+           ) as order_rank,
+           ROW_NUMBER() OVER (
+               PARTITION BY SESSION_ID
+               ORDER BY ORDER_AT DESC
+           ) as session_rank
     FROM {{ source('snowflake_web', 'orders') }}
 )
 
@@ -19,4 +26,6 @@ SELECT _FIVETRAN_ID,
        _FIVETRAN_DELETED,
        _FIVETRAN_SYNCED AS _FIVETRAN_SYNCED_TS
 FROM ranking
-WHERE row_n = 1
+WHERE 1=1
+AND order_rank = 1 
+AND session_rank = 1
