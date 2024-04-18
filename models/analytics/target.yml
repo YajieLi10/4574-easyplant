@@ -135,7 +135,7 @@ models:
           - not_null
       - name: address
         description: The address of the employee
-      - name: annual salary
+      - name: annual_salary
         description: The annual salary of the employee
       - name: city
         description: The city of the employee
