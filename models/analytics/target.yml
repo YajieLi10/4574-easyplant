@@ -27,4 +27,48 @@ models:
         description: Revenues from orders
       - name: profit
         description: The difference between revenue and cost
-            
+  
+  - name: fact_sessions
+    description: The session table. This includes all behaviors per session
+    columns:
+      - name: session_id
+        description: The unique identifier of a session
+        tests:
+          - unique
+          - not_null
+      - name: session_at_ts
+        description: Time that this sessin starts
+      - name: IP
+        description: IP of this session
+      - name: OS
+        description: Operation system of this ession
+      - name: visited_landing_page
+        description: whether this session visits the landing page or not
+      - name: visited_plant_care_page
+        description: whether this session visits the plant care page or not
+      - name: visited_faq_page
+        description: whether this session visits the faq page or not
+      - name: visited_shop_plants_page
+        description: whether this session visits the shop plants page or not
+      - name: visited_cart_page
+        description: whether this session visits the cart page or not
+      - name: num_viewed_item
+        description: total number of items that viewed
+      - name: num_item_added_to_cart
+        description: total number of type of items that added to cart
+      - name: total_num_add_to_cart
+        description: total number of items that added to cart
+      - name: total_num_remove_from_cart
+        description: total number of items that removed from cart
+      - name: total_num_stay_in_cart
+        description: total number of items that stayed in cart
+      - name: total_price_add_to_cart
+        description: total price that added to cart
+      - name: total_price_remove_from_cart
+        description: total price that remove from cart
+      - name: total_price_stay_in_cart
+        description: total price that stay in cart
+      - name: converted_to_order
+        description: whether this session is converted to an order
+
+        
