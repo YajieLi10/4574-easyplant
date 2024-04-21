@@ -46,6 +46,38 @@ sources:
     schema: GOOGLE_DRIVE
     tables:
       - name: expenses
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: hr_joins
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: hr_quist
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: returns
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
