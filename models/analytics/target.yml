@@ -104,6 +104,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: orders_ts
+        description: The time that the order is placed
       - name: quantity_total
         description: The total number of items in the order
       - name: tax_rate
