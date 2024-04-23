@@ -11,7 +11,7 @@ sources:
             count: 1
             period: day
           error_after:
-            count: 5
+            count: 2
             period: day
         loaded_at_field: _fivetran_synced
       - name: orders
@@ -20,7 +20,7 @@ sources:
             count: 1
             period: day
           error_after:
-            count: 5
+            count: 2
             period: day
         loaded_at_field: _fivetran_synced
       - name: page_views
@@ -29,7 +29,7 @@ sources:
             count: 1
             period: day
           error_after:
-            count: 5
+            count: 2
             period: day
         loaded_at_field: _fivetran_synced
       - name: sessions
@@ -38,7 +38,7 @@ sources:
             count: 1
             period: day
           error_after:
-            count: 5
+            count: 2
             period: day
         loaded_at_field: _fivetran_synced
   - name: google_drive
@@ -46,6 +46,38 @@ sources:
     schema: GOOGLE_DRIVE
     tables:
       - name: expenses
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: hr_joins
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: hr_quist
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
       - name: returns
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 2
+            period: day
+        loaded_at_field: _fivetran_synced
