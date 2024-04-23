@@ -122,7 +122,7 @@ models:
         description: The returned date of the order
       - name: is_refunded
         description: Whether a refund is approved for the return
-      - name: refund_request
+      - name: return_request
         description: Whether a refund is requested
 
   - name: dim_employee
